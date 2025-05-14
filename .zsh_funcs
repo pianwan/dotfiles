@@ -1,0 +1,60 @@
+## timelapse
+function record() {
+  cd ~/screencapture/jpg;
+  RES_WIDTH=$(/usr/sbin/system_profiler SPDisplaysDataType | grep Resolution);
+  RES_WIDTH=(${RES_WIDTH:22:4});
+  RES_WIDTH=$((RES_WIDTH/2));
+  while :
+  NOW=$(date +"%y%m%d%H%M%S");
+  do screencapture -C -t jpg -x ~/screencapture/jpg/$NOW.jpg;
+    sleep 7 & pid=$!
+    NOW=$(date +"%y%m%d%H%M%S");
+    wait $pid
+  done
+}
+
+function movie() {
+  NOW=$(date +"%y%m%d%H%M%S");
+  cd ~/screencapture/jpg;
+  cnt=0
+  rm -rf .DS_Store;
+  for file in *
+    do
+      if [ -f "$file" ] ; then
+      ext=${file##*.}
+      printf -v pad "%05d" "$cnt"
+      mv "$file" "${pad}.${ext}"
+      cnt=$(( $cnt + 1 ))
+    fi
+  done;
+  rm -rf 00000.jpg;
+  for pic in *.jpg;
+    do convert $pic -resize 50% $pic;
+  done;
+  ffmpeg -r 24 -i %05d.jpg -b 20000k ~/screencapture/mov/$USER-$NOW.mov;
+  rm -rf ./*.jpg;
+}
+
+function pfd() {
+  osascript 2> /dev/null <<EOF
+  tell application "Finder"
+    return POSIX path of (target of window 1 as alias)
+  end tell
+EOF
+}
+
+function mcd {
+  mkdir $1 && cd $1;
+}
+
+function cdf() {
+  cd "$(pfd)"
+}
+
+function ,touch {
+  mkdir -p "$(dirname "$1")" && touch "$1"
+}
+
+function ,take() {
+  mkdir -p "$(dirname "$1")" && touch "$1" && take "$(dirname "$1")"
+}

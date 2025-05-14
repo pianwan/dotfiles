@@ -1,0 +1,35 @@
+# Alias
+alias vi="nvim"
+alias vim="nvim"
+alias ,ms="%PATH/TO/MY/SCRIPT%"
+alias ,ip="ipconfig getifaddr en0"
+alias ,sshconfig="vim ~/.ssh/config"
+alias ,sshfolder="cd ~/.ssh"
+alias ,gitconfig="vim ~/.gitconfig"
+alias ,zshrc="vim ~/.zshrc"
+alias ,gitignore="vim ~/.gitignore_global"
+alias ,hosts="vim /etc/hosts"
+alias b=",ms branch"
+alias umi="/Users/%MY_USERNAME%/Documents/Code/github.com/umijs/umi/packages/umi/bin/umi.js"
+# kube
+alias k="kubectl"
+# chore
+alias br="bun run"
+alias cdtmp='cd `mktemp -d /tmp/macor-XXXXXX`'
+alias cdtemp='cdtmp'
+alias pi="echo 'Ping Google' && ping www.google.com"
+alias ip="ipconfig getifaddr en0 && ipconfig getifaddr en1"
+alias cip="curl cip.cc"
+alias ee="stree"
+## system
+alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
+alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
+# cd
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ..l.='cd ../../ && ll'
+alias ....='cd ../../../'
+alias ~="cd ~"
+alias -- -="cd -"
+alias ll='ls -alhG'
+alias ls='ls -G'

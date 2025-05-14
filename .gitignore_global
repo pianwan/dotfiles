@@ -1,0 +1,13 @@
+# Basic
+*~
+.DS_Store
+.idea
+*.iml
+out
+gen
+.vscode
+.devcontainer
+venv/
+__pycache__
+*.log
+.texpadtmp
