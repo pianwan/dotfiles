@@ -19,8 +19,6 @@ zstyle ':completion:*' menu select
 export ZSHZ_CASE=smart
 export ZSHZ_TILDE=1
 
-# use starship theme (needs to be at the end)
-eval "$(starship init zsh)"
 source $ZSH/oh-my-zsh.sh
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
@@ -29,3 +27,6 @@ HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-
 if [ -f "$HB_CNF_HANDLER" ]; then
 source "$HB_CNF_HANDLER";
 fi
+
+# use starship theme (needs to be at the end)
+eval "$(starship init zsh)"

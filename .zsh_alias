@@ -1,6 +1,4 @@
 # Alias
-alias vi="nvim"
-alias vim="nvim"
 alias ,ms="%PATH/TO/MY/SCRIPT%"
 alias ,ip="ipconfig getifaddr en0"
 alias ,sshconfig="vim ~/.ssh/config"
