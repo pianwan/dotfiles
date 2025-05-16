@@ -10,8 +10,8 @@ plugins=(
   z
 )
 
-source .zsh_alias
-source .zsh_funcs
+source $HOME/.zsh_alias
+source $HOME/.zsh_funcs
 
 # load auto completions with z
 autoload -Uz compinit && compinit
@@ -20,7 +20,7 @@ export ZSHZ_CASE=smart
 export ZSHZ_TILDE=1
 
 source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.`basename $SHELL`
+source $HOME/.iterm2_shell_integration.`basename $SHELL`
 
 # brew command-not-find
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
