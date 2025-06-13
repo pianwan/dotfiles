@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+
+# install omz
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # zsh starship theme
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 

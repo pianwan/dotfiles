@@ -9,6 +9,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set showmatch
+set number
+set relativenumber
 
 syntax on
-set nu!
